@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +14,22 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Hotels'),
+          title: Text(
+            'Hotels',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+          ),
+        ),
+        body: GridView.count(
+          crossAxisCount: 2,
+          children: <Widget>[
+            Text('Hotels'),
+            Text('Hotels'),
+            Text('Hotels'),
+            Text('Hotels')
+          ],
         ),
       ),
     );
