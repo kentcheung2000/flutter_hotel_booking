@@ -8,21 +8,46 @@ class Hotel {
   int rating;
   String description;
   int price;
+  String image;
 
   Hotel(
       {@required this.name,
       @required this.rating,
       this.description,
-      @required this.price});
+      @required this.price,
+      @required this.image});
 }
 
 class MyApp extends StatelessWidget {
   List<Hotel> hotels = [
     Hotel(
-        name: 'Califonia', rating: 4, description: 'Wifi included', price: 300),
-    Hotel(name: 'China', rating: 5, description: 'Wifi included', price: 360),
-    Hotel(name: 'Canada', rating: 3, description: 'Wifi included', price: 320),
-    Hotel(name: 'Mexico', rating: 3, description: 'Wifi included', price: 100),
+        name: 'Califonia',
+        rating: 4,
+        description: 'Wifi included',
+        price: 300,
+        image:
+            'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
+    Hotel(
+        name: 'China',
+        rating: 5,
+        description: 'Wifi included',
+        price: 360,
+        image:
+            'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
+    Hotel(
+        name: 'Canada',
+        rating: 3,
+        description: 'Wifi included',
+        price: 320,
+        image:
+            'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
+    Hotel(
+        name: 'Mexico',
+        rating: 3,
+        description: 'Wifi included',
+        price: 100,
+        image:
+            'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
   ];
 
   @override
@@ -43,14 +68,16 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        body: GridView.count(
-          crossAxisCount: 2,
-          children: <Widget>[
-            Text('Hotels'),
-            Text('Hotels'),
-            Text('Hotels'),
-            Text('Hotels')
-          ],
+        body: GridView.builder(
+          itemCount: hotels.length,
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemBuilder: (contect, index) => Container(
+            child: GridTile(
+              child: Image.network(hotels[index].image),
+            ),
+            color: Colors.grey,
+          ),
         ),
       ),
     );
