@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hotel_booking/details_screen.dart';
 
 void main() => runApp(MyApp());
 
 class Hotel {
-  String name;
-  int rating;
-  String description;
-  int price;
-  String image;
+  final String name;
+  final int rating;
+  final String description;
+  final int price;
+  final String image;
 
   Hotel(
       {@required this.name,
@@ -19,7 +20,8 @@ class Hotel {
 }
 
 class MyApp extends StatelessWidget {
-  List<Hotel> hotels = [
+  static const routeName = '/my_app';
+  final List<Hotel> hotels = [
     Hotel(
         name: 'Califonia',
         rating: 4,
@@ -75,7 +77,10 @@ class MyApp extends StatelessWidget {
             itemCount: hotels.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-            itemBuilder: (contect, index) => GestureDetector(
+            itemBuilder: (context, index) => GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(DetailsScreen.routeName, arguments: hotels[index]);
+              },
               child: Container(
                 child: GridTile(
                   child: Image.network(hotels[index].image, fit: BoxFit.cover),
@@ -86,6 +91,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      routes: {
+        MyApp.routeName: (context) => MyApp(),
+        DetailsScreen.routeName: (context) => DetailsScreen(),
+      }
     );
   }
 }
