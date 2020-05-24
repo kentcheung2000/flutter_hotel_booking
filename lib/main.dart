@@ -33,21 +33,21 @@ class MyApp extends StatelessWidget {
         description: 'Wifi included',
         price: 360,
         image:
-            'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
+            'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg'),
     Hotel(
         name: 'Canada',
         rating: 3,
         description: 'Wifi included',
         price: 320,
         image:
-            'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
+            'https://images.pexels.com/photos/1458457/pexels-photo-1458457.jpeg'),
     Hotel(
         name: 'Mexico',
         rating: 3,
         description: 'Wifi included',
         price: 100,
         image:
-            'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
+            'https://images.pexels.com/photos/1306699/pexels-photo-1306699.jpeg'),
   ];
 
   @override
@@ -68,15 +68,21 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        body: GridView.builder(
-          itemCount: hotels.length,
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-          itemBuilder: (contect, index) => Container(
-            child: GridTile(
-              child: Image.network(hotels[index].image),
+        body: Container(
+          color: Colors.blueAccent,
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+          child: GridView.builder(
+            itemCount: hotels.length,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+            itemBuilder: (contect, index) => GestureDetector(
+              child: Container(
+                child: GridTile(
+                  child: Image.network(hotels[index].image, fit: BoxFit.cover),
+                ),
+                color: Colors.grey,
+              ),
             ),
-            color: Colors.grey,
           ),
         ),
       ),
