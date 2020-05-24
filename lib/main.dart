@@ -55,46 +55,59 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Hotels',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text(
+              'Hotels',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
             ),
           ),
-        ),
-        body: Container(
-          color: Colors.blueAccent,
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 50),
-          child: GridView.builder(
-            itemCount: hotels.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
-            itemBuilder: (context, index) => GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(DetailsScreen.routeName, arguments: hotels[index]);
-              },
-              child: Container(
-                child: GridTile(
-                  child: Image.network(hotels[index].image, fit: BoxFit.cover),
+          body: Container(
+            color: Colors.blueAccent,
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+            child: GridView.builder(
+              itemCount: hotels.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+              itemBuilder: (context, index) => GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamed(DetailsScreen.routeName,
+                      arguments: hotels[index]);
+                },
+                child: Container(
+                  child: GridTile(
+                    footer: Container(
+                      color: Colors.black87,
+                      height: 40,
+                      child: Center(
+                        child: Text(
+                          hotels[index].name,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                    child:
+                        Image.network(hotels[index].image, fit: BoxFit.cover),
+                  ),
+                  color: Colors.grey,
                 ),
-                color: Colors.grey,
               ),
             ),
           ),
         ),
-      ),
-      routes: {
-        MyApp.routeName: (context) => MyApp(),
-        DetailsScreen.routeName: (context) => DetailsScreen(),
-      }
-    );
+        routes: {
+          MyApp.routeName: (context) => MyApp(),
+          DetailsScreen.routeName: (context) => DetailsScreen(),
+        });
   }
 }
