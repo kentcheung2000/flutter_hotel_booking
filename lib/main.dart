@@ -71,8 +71,8 @@ class MyApp extends StatelessWidget {
             ),
           ),
           body: Container(
-            color: Colors.blueAccent,
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+            color: Colors.black26,
+            padding: EdgeInsets.all(10),
             child: GridView.builder(
               itemCount: hotels.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -82,24 +82,26 @@ class MyApp extends StatelessWidget {
                   Navigator.of(context).pushNamed(DetailsScreen.routeName,
                       arguments: hotels[index]);
                 },
-                child: Container(
-                  child: GridTile(
-                    footer: Container(
-                      color: Colors.black87,
-                      height: 40,
-                      child: Center(
-                        child: Text(
-                          hotels[index].name,
-                          style: TextStyle(
-                            color: Colors.white,
+                child: ClipRRect(
+                  borderRadius:BorderRadius.circular(15),
+                  child: Container(
+                    child: GridTile(
+                      footer: Container(
+                        color: Colors.black87,
+                        height: 40,
+                        child: Center(
+                          child: Text(
+                            hotels[index].name,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
+                      child: Image.network(hotels[index].image, fit: BoxFit.cover),
                     ),
-                    child:
-                        Image.network(hotels[index].image, fit: BoxFit.cover),
+                    color: Colors.grey,
                   ),
-                  color: Colors.grey,
                 ),
               ),
             ),
