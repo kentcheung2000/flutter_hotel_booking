@@ -41,7 +41,10 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     padding: EdgeInsets.all(10),
                     child: Row(
                       children: <Widget>[
-                        Text('Rating: '),
+                        Text(
+                          'Rating: ',
+                          style: TextStyle(fontSize: 24),
+                        ),
                         hotel.rating >= 1
                             ? Icon(
                                 Icons.star,
@@ -100,20 +103,28 @@ class _DetailsScreenState extends State<DetailsScreen> {
                       borderRadius: BorderRadius.circular(15),
                       color: Theme.of(context).accentColor,
                     ),
-                    child: Text(hotel.description),
+                    child: Text(
+                      hotel.price.toString() + ' \$',
+                      style: TextStyle(fontSize: 24),
+                    ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Container(
+                    height: 300,
                     width: double.infinity,
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Theme.of(context).accentColor,
                     ),
-                    child: Text(
-                      hotel.price.toString() + ' \$',
+                    child: ListView.builder(
+                      itemBuilder: (context, item) => Text(
+                        hotel.description[item],
+                        style: TextStyle(fontSize: 24),
+                      ),
+                      itemCount: hotel.description.length,
                     ),
                   ),
                 ],
