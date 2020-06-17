@@ -16,7 +16,23 @@ class _DetailsScreenState extends State<DetailsScreen> {
       appBar: AppBar(
         title: Text('Details'),
       ),
-      body: Text(hotel.name),
+      body: Column(
+        children: <Widget>[
+          Flexible(
+            flex: 1,
+            child: Container(
+              //color: Colors.brown,
+              width: double.infinity,
+              child: Image.network(hotel.image, fit: BoxFit.cover),
+            ),
+          ),
+          Flexible(
+              flex: 3,
+              child: Container(
+                color: Colors.black26,
+              ))
+        ],
+      ),
     );
   }
 }
