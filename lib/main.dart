@@ -59,6 +59,8 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
+          primaryColor: Colors.orange,
+          accentColor: Colors.white,
         ),
         home: Scaffold(
           appBar: AppBar(
@@ -83,7 +85,7 @@ class MyApp extends StatelessWidget {
                       arguments: hotels[index]);
                 },
                 child: ClipRRect(
-                  borderRadius:BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15),
                   child: Container(
                     child: GridTile(
                       footer: Container(
@@ -93,12 +95,13 @@ class MyApp extends StatelessWidget {
                           child: Text(
                             hotels[index].name,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Theme.of(context).accentColor,
                             ),
                           ),
                         ),
                       ),
-                      child: Image.network(hotels[index].image, fit: BoxFit.cover),
+                      child:
+                          Image.network(hotels[index].image, fit: BoxFit.cover),
                     ),
                     color: Colors.grey,
                   ),

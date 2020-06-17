@@ -36,7 +36,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
+                      color: Theme.of(context).accentColor,
                     ),
                     padding: EdgeInsets.all(10),
                     child: Row(
@@ -45,47 +45,47 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         hotel.rating >= 1
                             ? Icon(
                                 Icons.star,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               )
                             : Icon(
                                 Icons.star_border,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               ),
                         hotel.rating >= 2
                             ? Icon(
                                 Icons.star,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               )
                             : Icon(
                                 Icons.star_border,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               ),
                         hotel.rating >= 3
                             ? Icon(
                                 Icons.star,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               )
                             : Icon(
                                 Icons.star_border,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               ),
                         hotel.rating >= 4
                             ? Icon(
                                 Icons.star,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               )
                             : Icon(
                                 Icons.star_border,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               ),
                         hotel.rating >= 5
                             ? Icon(
                                 Icons.star,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               )
                             : Icon(
                                 Icons.star_border,
-                                color: Colors.blue,
+                                color: Theme.of(context).primaryColor,
                               ),
                       ],
                     ),
@@ -98,7 +98,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
+                      color: Theme.of(context).accentColor,
                     ),
                     child: Text(hotel.description),
                   ),
@@ -110,7 +110,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.white,
+                      color: Theme.of(context).accentColor,
                     ),
                     child: Text(
                       hotel.price.toString() + ' \$',
