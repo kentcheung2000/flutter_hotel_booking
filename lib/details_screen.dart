@@ -89,7 +89,33 @@ class _DetailsScreenState extends State<DetailsScreen> {
                               ),
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    child: Text(hotel.description),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    child: Text(
+                      hotel.price.toString() + ' \$',
+                    ),
+                  ),
                 ],
               ),
             ),
