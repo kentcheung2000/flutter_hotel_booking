@@ -117,7 +117,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                         height: 20,
                       ),
                       Container(
-                        height: 300,
+                        //height: 300,
                         width: double.infinity,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(

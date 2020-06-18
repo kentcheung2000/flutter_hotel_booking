@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hotel_booking/details_screen.dart';
+import 'package:flutter_hotel_booking/drawer_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -112,6 +113,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
+          drawer: DrawerScreen(),
           body: Container(
             color: Colors.black26,
             padding: EdgeInsets.all(10),
