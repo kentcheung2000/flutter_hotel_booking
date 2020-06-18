@@ -25,28 +25,68 @@ class MyApp extends StatelessWidget {
     Hotel(
         name: 'Califonia',
         rating: 4,
-        description: ['Wifi included', 'Exclusive pool', 'No smoking'],
+        description: [
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking'
+        ],
         price: 300,
         image:
             'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg'),
     Hotel(
         name: 'China',
         rating: 5,
-        description: ['Wifi included', 'Exclusive pool', 'No smoking'],
+        description: [
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking'
+        ],
         price: 360,
         image:
             'https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg'),
     Hotel(
         name: 'Canada',
         rating: 3,
-        description: ['Wifi included', 'Exclusive pool', 'No smoking'],
+        description: [
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking'
+        ],
         price: 320,
         image:
             'https://images.pexels.com/photos/1458457/pexels-photo-1458457.jpeg'),
     Hotel(
         name: 'Mexico',
         rating: 3,
-        description: ['Wifi included', 'Exclusive pool', 'No smoking'],
+        description: [
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking',
+          'Wifi included',
+          'Exclusive pool',
+          'No smoking'
+        ],
         price: 100,
         image:
             'https://images.pexels.com/photos/1306699/pexels-photo-1306699.jpeg'),
