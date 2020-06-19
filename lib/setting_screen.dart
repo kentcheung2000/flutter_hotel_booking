@@ -18,7 +18,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
       drawer: DrawerScreen(),
       body: Container(
         child: Center(
-          child: Text('This is our settings'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Visibility option'),
+              RaisedButton(
+                onPressed: () {},
+                child: Text('Change to dark mode'),
+                color: Theme.of(context).primaryColor,
+              ),
+            ],
+          ),
         ),
       ),
     );
