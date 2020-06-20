@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hotel_booking/main.dart';
+import 'package:provider/provider.dart';
+import 'package:flutter_hotel_booking/dark_provider.dart';
 
 import 'details_screen.dart';
 import 'drawer_screen.dart';
@@ -80,6 +82,8 @@ class HotelsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final DarkProvider darkProvider = Provider.of<DarkProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -92,7 +96,7 @@ class HotelsPage extends StatelessWidget {
       ),
       drawer: DrawerScreen(),
       body: Container(
-        color: Colors.black26,
+        color: darkProvider.darkMode ? Theme.of(context).primaryColorDark : Colors.black26,
         padding: EdgeInsets.all(10),
         child: GridView.builder(
           itemCount: hotels.length,

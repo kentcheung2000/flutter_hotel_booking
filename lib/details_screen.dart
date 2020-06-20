@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hotel_booking/main.dart';
+import 'package:flutter_hotel_booking/dark_provider.dart';
+import 'package:provider/provider.dart';
 
 class DetailsScreen extends StatefulWidget {
   static const routeName = '/details_screen';
@@ -9,10 +11,13 @@ class DetailsScreen extends StatefulWidget {
 }
 
 class _DetailsScreenState extends State<DetailsScreen> {
+
   @override
   Widget build(BuildContext context) {
+    final DarkProvider darkProvider = Provider.of<DarkProvider>(context);
     final device = MediaQuery.of(context).size;
     final hotel = ModalRoute.of(context).settings.arguments as Hotel;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(hotel.name),
@@ -35,7 +40,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                 flex: 3,
                 child: Container(
                   padding: EdgeInsets.all(10),
-                  color: Colors.black26,
+                  color: darkProvider.darkMode ? Theme.of(context).primaryColorDark : Colors.black26,
                   child: Column(
                     children: <Widget>[
                       Container(

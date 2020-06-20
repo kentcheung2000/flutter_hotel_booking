@@ -5,7 +5,7 @@ class DarkProvider extends ChangeNotifier{
 
   DarkProvider({this.darkMode=false});
 
-  void setDarMode(bool newValue){
+  void setDarkMode(){
     darkMode = !darkMode;
     notifyListeners();
   }
